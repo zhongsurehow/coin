@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>加密货币价格对比</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1>加密货币实时价格对比</h1>
+        <div class="last-update">最后更新: <span id="last-update-time">加载中...</span></div>
+    </header>
+
+    <main>
+        <div class="controls">
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="搜索货币...">
+                <button id="search-btn"><i class="fas fa-search"></i></button>
+            </div>
+            <div class="refresh-container">
+                <button id="refresh-btn"><i class="fas fa-sync-alt"></i> 刷新数据</button>
+                <select id="auto-refresh">
+                    <option value="0">手动刷新</option>
+                    <option value="0.5">0.5秒</option>
+                    <option value="1">1秒</option>
+                    <option value="10">10秒</option>
+                    <option value="30">30秒</option>
+                    <option value="60">1分钟</option>
+                    <option value="300">5分钟</option>
+                </select>
+            </div>
+            <div class="feature-toggles">
+                <button id="arbitrage-btn" class="feature-btn"><i class="fas fa-chart-line"></i> 套利机会</button>
+                <button id="announcements-btn" class="feature-btn"><i class="fas fa-bullhorn"></i> 公告监控</button>
+                <button id="deposit-withdraw-btn" class="feature-btn"><i class="fas fa-exchange-alt"></i> 充提信息</button>
+            </div>
+        </div>
+
+        <!-- 套利机会面板 -->
+        <div id="arbitrage-panel" class="feature-panel" style="display: none;">
+            <h3><i class="fas fa-chart-line"></i> 套利机会</h3>
+            <div id="arbitrage-opportunities"></div>
+        </div>
+
+        <!-- 公告监控面板 -->
+        <div id="announcements-panel" class="feature-panel" style="display: none;">
+            <h3><i class="fas fa-bullhorn"></i> 交易所公告</h3>
+            <div id="announcements-list"></div>
+        </div>
+
+        <!-- 充提信息面板 -->
+        <div id="deposit-withdraw-panel" class="feature-panel" style="display: none;">
+            <h3><i class="fas fa-exchange-alt"></i> 充值提现信息</h3>
+            <div id="deposit-withdraw-info"></div>
+        </div>
+
+        <div class="loading" id="loading-indicator">
+            <div class="spinner"></div>
+            <p>正在获取最新价格数据...</p>
+        </div>
+
+        <div class="error-message" id="error-message" style="display: none;">
+            <i class="fas fa-exclamation-triangle"></i>
+            <p id="error-text">获取数据时出错</p>
+        </div>
+
+        <div class="table-container">
+            <table id="price-table">
+                <thead>
+                    <tr>
+                        <th class="sortable" data-sort="name">货币 <i class="fas fa-sort"></i></th>
+                        <th class="sortable" data-sort="binance">Binance<br><small>买入/卖出</small> <i class="fas fa-sort"></i></th>
+                        <th class="sortable" data-sort="okx">OKX<br><small>买入/卖出</small> <i class="fas fa-sort"></i></th>
+                        <th class="sortable" data-sort="mexc">MEXC<br><small>买入/卖出</small> <i class="fas fa-sort"></i></th>
+                        <th class="sortable" data-sort="gate">Gate<br><small>买入/卖出</small> <i class="fas fa-sort"></i></th>
+                        <th class="sortable" data-sort="kucoin">Kucoin<br><small>买入/卖出</small> <i class="fas fa-sort"></i></th>
+                        <th class="sortable" data-sort="bitget">Bitget<br><small>买入/卖出</small> <i class="fas fa-sort"></i></th>
+                        <th class="sortable" data-sort="bybit">Bybit<br><small>买入/卖出</small> <i class="fas fa-sort"></i></th>
+                        <th class="sortable" data-sort="htx">HTX<br><small>买入/卖出</small> <i class="fas fa-sort"></i></th>
+                        <th class="sortable" data-sort="spread">最大差价 <i class="fas fa-sort"></i></th>
+                        <th>提现链路</th>
+                        <th>充值链路</th>
+                        <th>充提合一</th>
+                        <th>套利机会</th>
+                    </tr>
+                </thead>
+                <tbody id="price-data">
+                    <!-- 数据将通过JavaScript动态填充 -->
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <footer>
+        <p>数据仅供参考，不构成投资建议。价格更新可能存在延迟。</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
