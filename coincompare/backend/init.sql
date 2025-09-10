@@ -1,0 +1,2 @@
+-- This file is intentionally left blank.
+-- Database initialization is handled by Alembic migrations.

@@ -1,7 +1,6 @@
 version: '3.8'
 
 services:
-  # PostgreSQL Database
   postgres:
     image: postgres:15-alpine
     container_name: coincompare-postgres
@@ -13,12 +12,10 @@ services:
       - "5432:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
-      - ./backend/init.sql:/docker-entrypoint-initdb.d/init.sql
     networks:
       - coincompare-network
     restart: unless-stopped
 
-  # Redis Cache
   redis:
     image: redis:7-alpine
     container_name: coincompare-redis
@@ -31,7 +28,6 @@ services:
     restart: unless-stopped
     command: redis-server --appendonly yes
 
-  # InfluxDB Time Series Database
   influxdb:
     image: influxdb:2.7-alpine
     container_name: coincompare-influxdb
@@ -51,23 +47,13 @@ services:
       - coincompare-network
     restart: unless-stopped
 
-  # Backend API Service
   backend:
     build:
       context: ./backend
       dockerfile: Dockerfile
     container_name: coincompare-backend
-    environment:
-      - DATABASE_URL=postgresql+asyncpg://postgres:postgres123@postgres:5432/coincompare
-      - REDIS_URL=redis://redis:6379/0
-      - INFLUXDB_URL=http://influxdb:8086
-      - INFLUXDB_TOKEN=coincompare-token-123
-      - INFLUXDB_ORG=coincompare
-      - INFLUXDB_BUCKET=trading_data
-      - JWT_SECRET_KEY=your-super-secret-jwt-key-change-in-production
-      - ENCRYPTION_KEY=your-32-byte-encryption-key-change-this
-      - ENVIRONMENT=development
-      - LOG_LEVEL=INFO
+    env_file:
+      - ./backend/.env
     ports:
       - "8000:8000"
     volumes:
@@ -80,46 +66,16 @@ services:
       - redis
       - influxdb
     restart: unless-stopped
+    entrypoint: /app/entrypoint.sh
     command: python run.py
 
-  # Frontend React Application
-  frontend:
-    build:
-      context: ./frontend
-      dockerfile: Dockerfile
-    container_name: coincompare-frontend
-    environment:
-      - REACT_APP_API_URL=http://localhost:8000
-      - REACT_APP_WS_URL=ws://localhost:8000
-      - REACT_APP_ENVIRONMENT=development
-    ports:
-      - "3000:3000"
-    volumes:
-      - ./frontend:/app
-      - /app/node_modules
-    networks:
-      - coincompare-network
-    depends_on:
-      - backend
-    restart: unless-stopped
-
-  # Celery Worker for Background Tasks
   celery-worker:
     build:
       context: ./backend
       dockerfile: Dockerfile
     container_name: coincompare-celery-worker
-    environment:
-      - DATABASE_URL=postgresql+asyncpg://postgres:postgres123@postgres:5432/coincompare
-      - REDIS_URL=redis://redis:6379/0
-      - INFLUXDB_URL=http://influxdb:8086
-      - INFLUXDB_TOKEN=coincompare-token-123
-      - INFLUXDB_ORG=coincompare
-      - INFLUXDB_BUCKET=trading_data
-      - JWT_SECRET_KEY=your-super-secret-jwt-key-change-in-production
-      - ENCRYPTION_KEY=your-32-byte-encryption-key-change-this
-      - ENVIRONMENT=development
-      - LOG_LEVEL=INFO
+    env_file:
+      - ./backend/.env
     volumes:
       - ./backend:/app
       - celery_logs:/app/logs
@@ -130,25 +86,15 @@ services:
       - redis
       - influxdb
     restart: unless-stopped
-    command: celery -A app.core.celery worker --loglevel=info
+    command: celery -A app.celery_app worker --loglevel=info
 
-  # Celery Beat Scheduler
   celery-beat:
     build:
       context: ./backend
       dockerfile: Dockerfile
     container_name: coincompare-celery-beat
-    environment:
-      - DATABASE_URL=postgresql+asyncpg://postgres:postgres123@postgres:5432/coincompare
-      - REDIS_URL=redis://redis:6379/0
-      - INFLUXDB_URL=http://influxdb:8086
-      - INFLUXDB_TOKEN=coincompare-token-123
-      - INFLUXDB_ORG=coincompare
-      - INFLUXDB_BUCKET=trading_data
-      - JWT_SECRET_KEY=your-super-secret-jwt-key-change-in-production
-      - ENCRYPTION_KEY=your-32-byte-encryption-key-change-this
-      - ENVIRONMENT=development
-      - LOG_LEVEL=INFO
+    env_file:
+      - ./backend/.env
     volumes:
       - ./backend:/app
       - celery_beat_data:/app/celerybeat-schedule
@@ -159,9 +105,29 @@ services:
       - redis
       - influxdb
     restart: unless-stopped
-    command: celery -A app.core.celery beat --loglevel=info
+    command: celery -A app.celery_app beat --loglevel=info
 
-  # Prometheus Monitoring
+  nginx:
+    container_name: coincompare-nginx
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+      target: production
+      args:
+        REACT_APP_API_URL: /api
+        REACT_APP_WS_URL: /ws
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./nginx/ssl:/etc/nginx/ssl:ro
+    networks:
+      - coincompare-network
+    depends_on:
+      - backend
+    restart: unless-stopped
+
   prometheus:
     image: prom/prometheus:latest
     container_name: coincompare-prometheus
@@ -181,7 +147,6 @@ services:
       - '--storage.tsdb.retention.time=200h'
       - '--web.enable-lifecycle'
 
-  # Grafana Dashboard
   grafana:
     image: grafana/grafana:latest
     container_name: coincompare-grafana
@@ -199,23 +164,6 @@ services:
       - coincompare-network
     depends_on:
       - prometheus
-    restart: unless-stopped
-
-  # Nginx Reverse Proxy
-  nginx:
-    image: nginx:alpine
-    container_name: coincompare-nginx
-    ports:
-      - "80:80"
-      - "443:443"
-    volumes:
-      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
-      - ./nginx/ssl:/etc/nginx/ssl
-    networks:
-      - coincompare-network
-    depends_on:
-      - frontend
-      - backend
     restart: unless-stopped
 
 volumes:

@@ -2,6 +2,7 @@ import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit';
 import { RootState } from '../index';
 import { authService } from '../../services/authService';
 import { websocketService } from '../../services/websocketService';
+import { API_BASE_URL } from '../../config';
 
 // Types
 export interface AppState {
@@ -107,7 +108,7 @@ export const checkServerStatus = createAsyncThunk(
   'app/checkServerStatus',
   async (_, { rejectWithValue }) => {
     try {
-      const response = await fetch('/api/health');
+      const response = await fetch(`${API_BASE_URL}/health`);
       if (response.ok) {
         const data = await response.json();
         return data.status || 'online';

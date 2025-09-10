@@ -40,15 +40,14 @@ CoinCompare 是一个现代化的加密货币套利交易平台，集成了 Humm
 - **数据源**: CoinGecko, CoinMarketCap
 - **通知**: Email, Webhook, WebSocket
 
-## 快速开始
+## 快速开始 (One-Click Install)
+
+本项目已经过优化，支持使用 Docker Compose 进行一键式安装和部署。无需手动安装Python, Node.js 或数据库。
 
 ### 环境要求
 
-- Python 3.9+
-- Node.js 16+
-- PostgreSQL 13+
-- Redis 6+
-- Docker & Docker Compose (可选)
+- Docker
+- Docker Compose v2
 
 ### 安装步骤
 
@@ -59,62 +58,43 @@ git clone https://github.com/your-repo/coincompare.git
 cd coincompare
 ```
 
-#### 2. 后端设置
+#### 2. 配置环境变量 (可选)
+
+项目已经包含一个默认的 `.env` 配置文件 (`backend/.env`)，可以直接运行。
+
+如果需要自定义配置 (例如，更改数据库密码或API密钥)，可以编辑 `backend/.env` 文件。
+
+#### 3. 启动所有服务
+
+在项目根目录下，运行以下命令:
 
 ```bash
-# 进入后端目录
-cd backend
-
-# 创建虚拟环境
-python -m venv venv
-source venv/bin/activate  # Windows: venv\Scripts\activate
-
-# 安装依赖
-pip install -r requirements.txt
-
-# 配置环境变量
-cp .env.example .env
-# 编辑 .env 文件，填入实际配置
-
-# 初始化数据库
-python -c "from app.core.database import create_tables; import asyncio; asyncio.run(create_tables())"
-
-# 启动后端服务
-python run.py
+sudo docker compose up -d --build
 ```
 
-#### 3. 前端设置
+此命令将会：
+- 构建后端和前端的生产环境镜像。
+- 启动所有服务，包括数据库、缓存、后端API和前端界面。
+- 自动完成数据库初始化。
+
+#### 4. 查看服务状态
 
 ```bash
-# 进入前端目录
-cd frontend
-
-# 安装依赖
-npm install
-
-# 启动开发服务器
-npm start
+sudo docker compose ps
 ```
 
-#### 4. 使用 Docker (推荐)
+#### 5. 查看日志
 
 ```bash
-# 构建和启动所有服务
-docker-compose up -d
-
-# 查看服务状态
-docker-compose ps
-
-# 查看日志
-docker-compose logs -f
+sudo docker compose logs -f
 ```
 
 ### 访问应用
 
-- **前端界面**: http://localhost:3000
-- **后端API**: http://localhost:8000
-- **API文档**: http://localhost:8000/docs
-- **监控面板**: http://localhost:3001 (Grafana)
+- **前端界面**: http://localhost
+- **后端API**: http://localhost/api
+- **API文档 (Swagger)**: http://localhost/docs
+- **监控面板 (Grafana)**: http://localhost:3001
 
 ## 功能模块
 
@@ -165,27 +145,19 @@ docker-compose logs -f
 ```
 coincompare/
 ├── backend/                 # 后端服务
-│   ├── app/
-│   │   ├── api/            # API路由
-│   │   ├── models/         # 数据模型
-│   │   ├── services/       # 业务服务
-│   │   ├── config.py       # 配置文件
-│   │   ├── database.py     # 数据库连接
-│   │   └── main.py         # FastAPI应用
-│   ├── requirements.txt    # Python依赖
-│   ├── .env.example       # 环境变量模板
-│   └── run.py             # 启动脚本
-├── frontend/               # 前端应用
-│   ├── src/
-│   │   ├── components/     # React组件
-│   │   ├── pages/         # 页面组件
-│   │   ├── store/         # Redux状态管理
-│   │   └── App.tsx        # 主应用组件
-│   └── package.json       # Node.js依赖
-├── index.html             # 原始静态页面
-├── script.js              # 原始JavaScript
-├── styles.css             # 原始样式
-└── README.md              # 项目文档
+│   ├── app/                 # FastAPI 应用代码
+│   ├── Dockerfile           # 后端 Dockerfile
+│   ├── entrypoint.sh        # 启动脚本 (自动数据库迁移)
+│   ├── requirements.txt     # Python 依赖
+│   └── .env                 # 环境变量
+├── frontend/                # 前端应用
+│   ├── src/                 # React 应用代码
+│   ├── Dockerfile           # 前端 Dockerfile (多阶段构建)
+│   └── package.json         # Node.js 依赖
+├── monitoring/              # 监控配置 (Prometheus, Grafana)
+├── nginx/                   # Nginx 配置
+├── docker-compose.yml       # Docker Compose 配置文件
+└── README.md                # 项目文档
 ```
 
 ## 注意事项

@@ -23,13 +23,15 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 # Install TA-Lib dependencies
-RUN curl -L http://prdownloads.sourceforge.net/ta-lib/ta-lib-0.4.0-src.tar.gz | tar xzf - && \
+RUN apt-get update && apt-get install -y wget && \
+    wget -q http://downloads.sourceforge.net/project/ta-lib/ta-lib/0.4.0/ta-lib-0.4.0-src.tar.gz -O- | tar xzf - && \
     cd ta-lib && \
     ./configure --prefix=/usr && \
     make && \
     make install && \
+    ldconfig && \
     cd .. && \
-    rm -rf ta-lib
+    rm -rf ta-lib ta-lib-0.4.0-src.tar.gz
 
 # Copy requirements first for better caching
 COPY requirements.txt .
