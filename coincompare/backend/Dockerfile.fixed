@@ -1,5 +1,6 @@
-# Use Python 3.10 slim image as base
-FROM python:3.10-slim-bookworm
+# Use a pre-built base image with system dependencies to avoid network issues.
+# This image is built from `prebuild.Dockerfile`.
+FROM juleseng/coincompare-base:1.0.0
 
 # Set environment variables
 ENV PYTHONDONTWRITEBYTECODE=1 \
@@ -11,17 +12,7 @@ ENV PYTHONDONTWRITEBYTECODE=1 \
 # Set work directory
 WORKDIR /app
 
-# Install system dependencies
-RUN apt-get update && \
-    apt-get install -y --fix-missing \
-    build-essential \
-    curl \
-    libpq-dev \
-    gcc \
-    g++ \
-    libffi-dev \
-    libssl-dev \
-    && rm -rf /var/lib/apt/lists/*
+# The system dependencies are already in the base image, so we skip apt-get.
 
 # Install TA-Lib dependencies
 RUN curl -L http://prdownloads.sourceforge.net/ta-lib/ta-lib-0.4.0-src.tar.gz | tar xzf - && \

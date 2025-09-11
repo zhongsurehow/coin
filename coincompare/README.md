@@ -166,6 +166,14 @@ cd coincompare/frontend
 └── README.md               # 项目文档
 ```
 
+## 关于构建过程 (About the Build Process)
+
+为了解决在某些网络环境下系统依赖包 (`apt-get`) 安装不稳定的问题，本项目的后端服务采用了一个预构建的 Docker 基础镜像 (`juleseng/coincompare-base:1.0.0`)。
+
+这个基础镜像包含了所有必需的系统级依赖。这样做的好处是，在您本地构建时，无需再从 Debian 的服务器上下载这些包，从而大大提高了构建的成功率和速度。
+
+如果您需要修改基础系统依赖，可以参考 `coincompare/backend/prebuild.Dockerfile` 文件。维护者可以使用它来构建和推送新版本的基础镜像。
+
 ## 注意事项
 
 - 价格数据仅供参考，不构成投资建议
