@@ -32,10 +32,12 @@ RUN apt-get update && \
 COPY requirements.txt .
 
 # Install Python dependencies
-# We use --no-build-isolation to force pip to use the numpy version specified in
-# requirements.txt when building the TA-Lib wheel, which prevents it from
-# downloading a newer, incompatible version of numpy in its isolated build env.
+# We install numpy separately first because TA-Lib's setup process requires it
+# to be present just to generate metadata.
+# We then use --no-build-isolation on the second command to ensure this pre-installed
+# numpy is used for the TA-Lib wheel compilation.
 RUN pip install --upgrade pip && \
+    pip install numpy==1.23.5 && \
     pip install --no-build-isolation -r requirements.txt
 
 # Copy application code
