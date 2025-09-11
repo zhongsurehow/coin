@@ -14,7 +14,19 @@ WORKDIR /app
 
 # The system dependencies are already in the base image, so we skip apt-get.
 
-# The TA-Lib C-library is not needed because we use the TA-Lib-Binary package.
+# Install TA-Lib C-library from source, as it's a dependency for the TA-Lib Python package.
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends wget && \
+    wget http://prdownloads.sourceforge.net/ta-lib/ta-lib-0.4.0-src.tar.gz && \
+    tar -xzf ta-lib-0.4.0-src.tar.gz && \
+    cd ta-lib/ && \
+    ./configure --prefix=/usr && \
+    make && \
+    make install && \
+    cd .. && \
+    rm -rf ta-lib ta-lib-0.4.0-src.tar.gz && \
+    apt-get purge -y --auto-remove wget && \
+    rm -rf /var/lib/apt/lists/*
 
 # Copy requirements first for better caching
 COPY requirements.txt .
