@@ -11,7 +11,7 @@ services:
       - "5432:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
-      - ./backend/init.sql:/docker-entrypoint-initdb.d/init.sql
+      - ./coincompare/backend/init.sql:/docker-entrypoint-initdb.d/init.sql
     networks:
       - coincompare-network
     restart: unless-stopped
@@ -52,7 +52,7 @@ services:
   # Backend API Service
   backend:
     build:
-      context: ./backend
+      context: ./coincompare/backend
       dockerfile: Dockerfile.fixed
     container_name: coincompare-backend
     environment:
@@ -69,7 +69,7 @@ services:
     ports:
       - "8000:8000"
     volumes:
-      - ./backend:/app
+      - ./coincompare/backend:/app
       - backend_logs:/app/logs
     networks:
       - coincompare-network
@@ -83,17 +83,18 @@ services:
   # Frontend React Application
   frontend:
     build:
-      context: ./frontend
+      context: ./coincompare/frontend
       dockerfile: Dockerfile
+      target: development
     container_name: coincompare-frontend
     environment:
-      - REACT_APP_API_URL=http://localhost:8000
-      - REACT_APP_WS_URL=ws://localhost:8000
+      - REACT_APP_API_URL=/api/v1
+      - REACT_APP_WS_URL=/ws
       - REACT_APP_ENVIRONMENT=development
     ports:
       - "3000:3000"
     volumes:
-      - ./frontend:/app
+      - ./coincompare/frontend:/app
       - /app/node_modules
     networks:
       - coincompare-network
@@ -104,7 +105,7 @@ services:
   # Celery Worker for Background Tasks
   celery-worker:
     build:
-      context: ./backend
+      context: ./coincompare/backend
       dockerfile: Dockerfile.fixed
     container_name: coincompare-celery-worker
     environment:
@@ -119,7 +120,7 @@ services:
       - ENVIRONMENT=development
       - LOG_LEVEL=INFO
     volumes:
-      - ./backend:/app
+      - ./coincompare/backend:/app
       - celery_logs:/app/logs
     networks:
       - coincompare-network
@@ -133,7 +134,7 @@ services:
   # Celery Beat Scheduler
   celery-beat:
     build:
-      context: ./backend
+      context: ./coincompare/backend
       dockerfile: Dockerfile.fixed
     container_name: coincompare-celery-beat
     environment:
@@ -148,7 +149,7 @@ services:
       - ENVIRONMENT=development
       - LOG_LEVEL=INFO
     volumes:
-      - ./backend:/app
+      - ./coincompare/backend:/app
       - celery_beat_data:/app/celerybeat-schedule
     networks:
       - coincompare-network
@@ -166,7 +167,7 @@ services:
     ports:
       - "9090:9090"
     volumes:
-      - ./monitoring/prometheus.yml:/etc/prometheus/prometheus.yml
+      - ./coincompare/monitoring/prometheus.yml:/etc/prometheus/prometheus.yml
       - prometheus_data:/prometheus
     networks:
       - coincompare-network
@@ -191,8 +192,8 @@ services:
       - "3001:3000"
     volumes:
       - grafana_data:/var/lib/grafana
-      - ./monitoring/grafana/provisioning:/etc/grafana/provisioning
-      - ./monitoring/grafana/dashboards:/var/lib/grafana/dashboards
+      - ./coincompare/monitoring/grafana/provisioning:/etc/grafana/provisioning
+      - ./coincompare/monitoring/grafana/dashboards:/var/lib/grafana/dashboards
     networks:
       - coincompare-network
     depends_on:
@@ -207,8 +208,8 @@ services:
       - "80:80"
       - "443:443"
     volumes:
-      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
-      - ./nginx/ssl:/etc/nginx/ssl
+      - ./coincompare/nginx/nginx.conf:/etc/nginx/nginx.conf
+      - ./coincompare/nginx/ssl:/etc/nginx/ssl
     networks:
       - coincompare-network
     depends_on:
