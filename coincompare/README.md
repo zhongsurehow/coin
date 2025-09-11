@@ -49,22 +49,26 @@ CoinCompare 是一个现代化的加密货币套利交易平台，集成了 Humm
 ### 使用 Docker 启动 (推荐)
 
 #### 1. 克隆项目
-首先，将项目克隆到您的本地机器：
 ```bash
 git clone https://github.com/your-repo/coincompare.git
+cd coincompare
 ```
+*请注意: 上述命令会带您进入项目根目录, 您应该能在此目录中看到 `docker-compose.yml` 文件。*
 
-#### 2. 启动服务
-进入项目**根目录** (例如 `cd coincompare`)。您可以通过检查是否存在 `docker-compose.yml` 文件来确认您位于正确的目录。
+#### 2. 构建基础镜像 (必需步骤)
+由于网络原因，直接构建可能会失败。我们提供了一个预构建的方案。请在项目根目录运行以下命令，首先构建包含所有系统依赖的基础镜像：
+```bash
+docker build -t juleseng/coincompare-base:1.0.0 -f coincompare/backend/prebuild.Dockerfile .
+```
+**注意:** 此命令只需要在您第一次设置项目或 `prebuild.Dockerfile` 发生更改时运行一次。
 
-然后，运行以下命令来一键构建和启动所有服务：
+#### 3. 启动所有服务
+基础镜像构建成功后，您现在可以一键启动所有应用服务：
 ```bash
 docker compose up -d --build
 ```
 
-该命令会自动构建前端和后端的镜像，并启动所有依赖的服务，包括数据库、缓存、Nginx等。
-
-#### 3. 查看服务
+#### 4. 查看服务
 
 查看所有服务的运行状态：
 ```bash
