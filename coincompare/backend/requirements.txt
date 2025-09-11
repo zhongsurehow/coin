@@ -28,7 +28,7 @@ scipy==1.11.4
 
 # Trading and financial libraries
 ccxt==4.1.64
-ta-lib==0.4.28
+TA-Lib-Binary==0.4.28
 yfinance==0.2.28
 
 # Authentication and security
