@@ -21,7 +21,6 @@ import LoginPage from './pages/Auth/Login';
 import RegisterPage from './pages/Auth/Register';
 
 // Styles
-import './App.css';
 import 'antd/dist/reset.css';
 
 const AppContent: React.FC = () => {
