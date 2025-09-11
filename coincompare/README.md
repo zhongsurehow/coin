@@ -54,14 +54,7 @@ CoinCompare 是一个现代化的加密货币套利交易平台，集成了 Humm
 git clone https://github.com/your-repo/coincompare.git
 ```
 
-#### 2. 配置环境
-在启动服务之前，您需要创建您的环境配置文件。项目根目录中提供了一个模板文件 `.env.example`。请将其复制为 `.env`：
-```bash
-cp .env.example .env
-```
-您可以根据需要编辑 `.env` 文件，例如修改数据库密码或JWT密钥。对于本地开发，默认值通常是足够的。
-
-#### 3. 启动服务
+#### 2. 启动服务
 进入项目**根目录** (例如 `cd coincompare`)。您可以通过检查是否存在 `docker-compose.yml` 文件来确认您位于正确的目录。
 
 然后，运行以下命令来一键构建和启动所有服务：
@@ -71,7 +64,7 @@ docker compose up -d --build
 
 该命令会自动构建前端和后端的镜像，并启动所有依赖的服务，包括数据库、缓存、Nginx等。
 
-#### 4. 查看服务
+#### 3. 查看服务
 
 查看所有服务的运行状态：
 ```bash
