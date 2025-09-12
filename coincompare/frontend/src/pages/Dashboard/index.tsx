@@ -217,7 +217,7 @@ const Dashboard: React.FC = () => {
     {
       title: '操作',
       key: 'action',
-      render: (_, record: ArbitrageOpportunity) => (
+      render: (_record, record: ArbitrageOpportunity) => (
         <Button
           type="link"
           size="small"
@@ -291,7 +291,7 @@ const Dashboard: React.FC = () => {
         activeKey={activeTab}
         onChange={setActiveTab}
         className="dashboard-tabs"
-        size={compactMode ? 'small' : 'default'}
+        size={compactMode ? 'small' : 'middle'}
       >
         <TabPane
           tab={

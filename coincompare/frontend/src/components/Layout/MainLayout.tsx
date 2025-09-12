@@ -18,7 +18,7 @@ import {
   DashboardOutlined,
   SwapOutlined,
   BankOutlined,
-  StrategyOutlined,
+  BulbOutlined,
   LineChartOutlined,
   SettingOutlined,
   UserOutlined,
@@ -77,7 +77,7 @@ const menuItems: MenuItem[] = [
   },
   {
     key: 'strategy',
-    icon: <StrategyOutlined />,
+    icon: <BulbOutlined />,
     label: '策略管理',
     path: '/strategy',
   },

@@ -361,7 +361,7 @@ const UnifiedTransferPanel: React.FC = () => {
     {
       title: '操作',
       key: 'action',
-      render: (_, record: TransferRoute) => (
+      render: (_record, record: TransferRoute) => (
         <Button
           type={selectedRoute?.id === record.id ? 'primary' : 'default'}
           size="small"
@@ -383,7 +383,7 @@ const UnifiedTransferPanel: React.FC = () => {
     {
       title: '路径',
       key: 'route',
-      render: (_, record: TransferRecord) => (
+      render: (_record, record: TransferRecord) => (
         <Space>
           <Text>{record.fromExchange}</Text>
           <SwapOutlined />
@@ -610,7 +610,7 @@ const UnifiedTransferPanel: React.FC = () => {
                     <Alert
                       message="选中路径详情"
                       description={
-                        <Timeline size="small">
+                        <Timeline>
                           {selectedRoute.steps.map((step, index) => (
                             <Timeline.Item key={index}>
                               {step}
