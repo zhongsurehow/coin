@@ -11,7 +11,7 @@ from alembic import command
 from alembic.config import Config
 import logging
 
-from .config import settings
+from .core.config import settings
 
 logger = logging.getLogger(__name__)
 
