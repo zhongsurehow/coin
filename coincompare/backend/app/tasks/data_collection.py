@@ -17,11 +17,7 @@ def collect_market_data(self):
     """收集市场数据任务"""
     try:
         # 运行异步数据收集
-        loop = asyncio.new_event_loop()
-        asyncio.set_event_loop(loop)
-        
-        result = loop.run_until_complete(_collect_market_data_async())
-        loop.close()
+        result = asyncio.run(_collect_market_data_async())
         
         logger.info(f"Market data collection completed: {result}")
         return result
@@ -84,11 +80,7 @@ def collect_orderbook_data(self, symbols: List[str] = None):
         if not symbols:
             symbols = ["BTC/USDT", "ETH/USDT", "BNB/USDT"]
         
-        loop = asyncio.new_event_loop()
-        asyncio.set_event_loop(loop)
-        
-        result = loop.run_until_complete(_collect_orderbook_data_async(symbols))
-        loop.close()
+        result = asyncio.run(_collect_orderbook_data_async(symbols))
         
         logger.info(f"Orderbook data collection completed: {result}")
         return result
@@ -133,11 +125,7 @@ async def _collect_orderbook_data_async(symbols: List[str]):
 def collect_real_time_prices(self, symbols: List[str]):
     """实时价格收集任务（高优先级）"""
     try:
-        loop = asyncio.new_event_loop()
-        asyncio.set_event_loop(loop)
-        
-        result = loop.run_until_complete(_collect_real_time_prices_async(symbols))
-        loop.close()
+        result = asyncio.run(_collect_real_time_prices_async(symbols))
         
         return result
         
@@ -181,11 +169,7 @@ async def _collect_real_time_prices_async(symbols: List[str]):
 def update_trading_pairs(self):
     """更新交易对信息任务"""
     try:
-        loop = asyncio.new_event_loop()
-        asyncio.set_event_loop(loop)
-        
-        result = loop.run_until_complete(_update_trading_pairs_async())
-        loop.close()
+        result = asyncio.run(_update_trading_pairs_async())
         
         logger.info(f"Trading pairs update completed: {result}")
         return result
@@ -239,11 +223,7 @@ async def _update_trading_pairs_async():
 def collect_historical_data(self, symbol: str, timeframe: str = "1h", limit: int = 100):
     """收集历史数据任务"""
     try:
-        loop = asyncio.new_event_loop()
-        asyncio.set_event_loop(loop)
-        
-        result = loop.run_until_complete(_collect_historical_data_async(symbol, timeframe, limit))
-        loop.close()
+        result = asyncio.run(_collect_historical_data_async(symbol, timeframe, limit))
         
         logger.info(f"Historical data collection completed for {symbol}: {result}")
         return result
@@ -292,11 +272,7 @@ async def _collect_historical_data_async(symbol: str, timeframe: str, limit: int
 def validate_data_quality(self):
     """数据质量验证任务"""
     try:
-        loop = asyncio.new_event_loop()
-        asyncio.set_event_loop(loop)
-        
-        result = loop.run_until_complete(_validate_data_quality_async())
-        loop.close()
+        result = asyncio.run(_validate_data_quality_async())
         
         logger.info(f"Data quality validation completed: {result}")
         return result

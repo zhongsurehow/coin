@@ -21,11 +21,7 @@ def detect_opportunities(self, symbols: List[str] = None):
         if not symbols:
             symbols = ["BTC/USDT", "ETH/USDT", "BNB/USDT", "ADA/USDT", "DOT/USDT"]
         
-        loop = asyncio.new_event_loop()
-        asyncio.set_event_loop(loop)
-        
-        result = loop.run_until_complete(_detect_opportunities_async(symbols))
-        loop.close()
+        result = asyncio.run(_detect_opportunities_async(symbols))
         
         logger.info(f"Arbitrage detection completed: {result}")
         return result
@@ -248,11 +244,7 @@ async def _save_opportunities_to_db(opportunities: List[Dict[str, Any]]):
 def calculate_profits(self, opportunity_ids: List[int] = None):
     """计算套利利润任务"""
     try:
-        loop = asyncio.new_event_loop()
-        asyncio.set_event_loop(loop)
-        
-        result = loop.run_until_complete(_calculate_profits_async(opportunity_ids))
-        loop.close()
+        result = asyncio.run(_calculate_profits_async(opportunity_ids))
         
         logger.info(f"Profit calculation completed: {result}")
         return result
@@ -351,11 +343,7 @@ def analyze_market_trends(self, symbols: List[str] = None, timeframe: str = "1h"
         if not symbols:
             symbols = ["BTC/USDT", "ETH/USDT", "BNB/USDT"]
         
-        loop = asyncio.new_event_loop()
-        asyncio.set_event_loop(loop)
-        
-        result = loop.run_until_complete(_analyze_market_trends_async(symbols, timeframe))
-        loop.close()
+        result = asyncio.run(_analyze_market_trends_async(symbols, timeframe))
         
         logger.info(f"Market trend analysis completed: {result}")
         return result
@@ -432,11 +420,7 @@ async def _analyze_market_trends_async(symbols: List[str], timeframe: str):
 def cleanup_expired_opportunities(self):
     """清理过期套利机会任务"""
     try:
-        loop = asyncio.new_event_loop()
-        asyncio.set_event_loop(loop)
-        
-        result = loop.run_until_complete(_cleanup_expired_opportunities_async())
-        loop.close()
+        result = asyncio.run(_cleanup_expired_opportunities_async())
         
         logger.info(f"Expired opportunities cleanup completed: {result}")
         return result
