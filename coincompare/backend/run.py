@@ -21,6 +21,24 @@ from app.services.hummingbot_client import hummingbot_manager
 from app.services.arbitrage_service import arbitrage_service
 import logging
 
+def create_directories():
+    """创建必要的目录"""
+    directories = [
+        'logs',
+        'data',
+        'backups',
+        'uploads'
+    ]
+
+    for directory in directories:
+        dir_path = project_root / directory
+        # Use print because logger is not yet configured
+        print(f"Ensuring directory exists: {dir_path}")
+        dir_path.mkdir(exist_ok=True)
+
+# Create directories before setting up logging
+create_directories()
+
 # Configure logging
 logging.basicConfig(
     level=logging.INFO,
@@ -63,24 +81,9 @@ async def startup_tasks():
         logger.error(f"Startup failed: {e}")
         raise
 
-def create_directories():
-    """创建必要的目录"""
-    directories = [
-        'logs',
-        'data',
-        'backups',
-        'uploads'
-    ]
-    
-    for directory in directories:
-        dir_path = project_root / directory
-        dir_path.mkdir(exist_ok=True)
-        logger.info(f"Directory created/verified: {dir_path}")
-
 def main():
     """主函数"""
-    # 创建必要目录
-    create_directories()
+    # 目录已在顶层创建
     
     # 设置环境变量
     os.environ.setdefault('PYTHONPATH', str(project_root))
