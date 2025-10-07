@@ -1,0 +1,129 @@
+{
+  "hexagrams": [
+    {
+      "number": 1,
+      "name_en": "The Creative",
+      "name_zh": "乾",
+      "symbol": "䷀",
+      "lines_binary": [1, 1, 1, 1, 1, 1],
+      "judgment_en": "The Creative works sublime success, furthering through perseverance.",
+      "judgment_zh": "元，亨，利，貞。",
+      "lines_en": [
+        "Nine at the beginning means: Hidden dragon. Do not act.",
+        "Nine in the second place means: Dragon appearing in the field. It furthers one to see the great man.",
+        "Nine in the third place means: All day long the superior man is creatively active. At nightfall his mind is still beset with cares. Danger. No blame.",
+        "Nine in the fourth place means: Wavering flight over the depths. No blame.",
+        "Nine in the fifth place means: Flying dragon in the heavens. It furthers one to see the great man.",
+        "Nine at the top means: Arrogant dragon will have cause to repent."
+      ],
+      "lines_zh": [
+        "初九：潛龍，勿用。",
+        "九二：見龍在田，利見大人。",
+        "九三：君子終日乾乾，夕惕若，厲，无咎。",
+        "九四：或躍在淵，无咎。",
+        "九五：飛龍在天，利見大人。",
+        "上九：亢龍有悔。"
+      ]
+    },
+    {
+      "number": 2,
+      "name_en": "The Receptive",
+      "name_zh": "坤",
+      "symbol": "䷁",
+      "lines_binary": [0, 0, 0, 0, 0, 0],
+      "judgment_en": "The Receptive brings about sublime success, furthering through the perseverance of a mare. If the superior man undertakes something and tries to lead, he goes astray; but if he follows, he finds guidance. It is favorable to find friends in the west and south, to forego friends in the east and north. Quiet perseverance brings good fortune.",
+      "judgment_zh": "元，亨，利牝馬之貞。君子有攸往，先迷後得主，利西南得朋，東北喪朋。安貞，吉。",
+      "lines_en": [
+        "Six at the beginning means: When there is hoarfrost underfoot, solid ice is not far off.",
+        "Six in the second place means: Straight, square, great. Without purpose, yet nothing remains unfurthered.",
+        "Six in the third place means: Hidden lines. One is able to persevere. If by chance you are in the service of a king, seek not works, but bring to completion.",
+        "Six in the fourth place means: A tied-up sack. No blame, no praise.",
+        "Six in the fifth place means: A yellow lower garment brings supreme good fortune.",
+        "Six at the top means: Dragons fight in the meadow. Their blood is black and yellow."
+      ],
+      "lines_zh": [
+        "初六：履霜，堅冰至。",
+        "六二：直，方，大，不習，无不利。",
+        "六三：含章可貞。或從王事，无成有終。",
+        "六四：括囊，无咎，无譽。",
+        "六五：黃裳，元吉。",
+        "上六：龍戰于野，其血玄黃。"
+      ]
+    },
+    {
+      "number": 3,
+      "name_en": "Difficulty at the Beginning",
+      "name_zh": "屯",
+      "symbol": "䷂",
+      "lines_binary": [0, 1, 0, 1, 0, 0],
+      "judgment_en": "Difficulty at the Beginning works supreme success, furthering through perseverance. Nothing should be undertaken. It furthers one to appoint helpers.",
+      "judgment_zh": "元，亨，利，貞，勿用有攸往，利建侯。",
+      "lines_en": [
+        "Nine at the beginning means: Hindrance and hesitation. It furthers one to remain persevering. It furthers one to appoint helpers.",
+        "Six in the second place means: Difficulties pile up. Horse and wagon part. He is not a robber; he will woo her in due time. The maiden is chaste, she does not pledge herself. Ten years--then she pledges herself.",
+        "Six in the third place means: Whoever hunts deer without the forester only loses his way in the forest. The superior man understands the signs of the time and prefers to desist. To go on brings humiliation.",
+        "Six in the fourth place means: Horse and wagon part. Strive for union. To go on brings good fortune. Everything acts to further.",
+        "Nine in the fifth place means: Difficulties in blessing. A little perseverance brings good fortune. Great perseverance brings misfortune.",
+        "Six at the top means: Horse and wagon part. Bloody tears flow."
+      ],
+      "lines_zh": [
+        "初九：磐桓，利居貞，利建侯。",
+        "六二：屯如邅如，乘馬班如，匪寇婚媾，女子貞不字，十年乃字。",
+        "六三：即鹿无虞，惟入于林中，君子幾不如舍，往吝。",
+        "六四：乘馬班如，求婚媾，往吉，无不利。",
+        "九五：屯其膏，小貞吉，大貞凶。",
+        "上六：乘馬班如，泣血漣如。"
+      ]
+    },
+    {
+      "number": 4,
+      "name_en": "Youthful Folly",
+      "name_zh": "蒙",
+      "symbol": "䷃",
+      "lines_binary": [0, 1, 0, 1, 0, 0],
+      "judgment_en": "Youthful Folly has success. It is not I who seek the young fool; the young fool seeks me. At the first oracle I inform him. If he asks two or three times, it is importunity. If he is importune, I give him no information. Perseverance furthers.",
+      "judgment_zh": "蒙：亨。匪我求童蒙，童蒙求我。初筮告，再三瀆，瀆則不告。利貞。",
+      "lines_en": [
+        "Six at the beginning: To make a fool develop, it is useful to discipline him. The fetters should be removed. To go on in this way brings humiliation.",
+        "Nine in the second place: To bear with fools in kindness brings good fortune. To know how to take women brings good fortune. The son is capable of taking charge of the household.",
+        "Six in the third place: Take not a maiden who, when she sees a man of bronze, loses possession of herself. Nothing that is done is furthering.",
+        "Six in the fourth place: Entangled folly brings humiliation.",
+        "Six in the fifth place: Childlike folly brings good fortune.",
+        "Nine at the top: In punishing folly it does not further one to commit transgressions. The only thing that furthers is to prevent transgressions."
+      ],
+      "lines_zh": [
+        "初六：利用刑人，用說桎梏，以往吝。",
+        "九二：包蒙，吉。納婦，吉。子克家。",
+        "六三：勿用取女，見金夫，不有躬，无攸利。",
+        "六四：困蒙，吝。",
+        "六五：童蒙，吉。",
+        "上九：擊蒙，不利為寇，利禦寇。"
+      ]
+    },
+    {
+      "number": 5,
+      "name_en": "Waiting (Nourishment)",
+      "name_zh": "需",
+      "symbol": "䷄",
+      "lines_binary": [1, 1, 1, 0, 1, 0],
+      "judgment_en": "WAITING. If you are sincere, you have light and success. Perseverance brings good fortune. It furthers one to cross the great water.",
+      "judgment_zh": "需：有孚，光亨，貞吉。利涉大川。",
+      "lines_en": [
+        "Nine at the beginning: Waiting in the meadow. It furthers one to abide in what endures. No blame.",
+        "Nine in the second place: Waiting on the sand. There is some gossip. The end brings good fortune.",
+        "Nine in the third place: Waiting in the mud brings about the arrival of the enemy.",
+        "Six in the fourth place: Waiting in blood. Get out of the pit.",
+        "Nine in the fifth place: Waiting at meat and drink. Perseverance brings good fortune.",
+        "Six at the top: One falls into the pit. Three uninvited guests arrive. Honor them, and in the end there will be good fortune."
+      ],
+      "lines_zh": [
+        "初九：需于郊，利用恆，无咎。",
+        "九二：需于沙，小有言，終吉。",
+        "九三：需于泥，致寇至。",
+        "六四：需于血，出自穴。",
+        "九五：需于酒食，貞吉。",
+        "上六：入于穴，有不速之客三人來，敬之終吉。"
+      ]
+    }
+  ]
+}
