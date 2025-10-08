@@ -87,9 +87,9 @@ def apply_consequences(choice, primary_hexagram, lines):
 
             # Apply a significant bonus
             for key in effects:
-                if effects[key] >= 0:
+                if effects[key] > 0:
                     effects[key] += bonus
-                else:
+                elif effects[key] < 0:
                     effects[key] = max(effects[key] + bonus, 0) # Mitigate negative effects
         else:
             message = ("The counsel of the changing lines points in a different direction. "
