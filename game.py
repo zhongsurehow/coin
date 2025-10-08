@@ -55,55 +55,56 @@ def get_player_choice(event):
         except ValueError:
             print("Invalid input. Please enter a number.")
 
-trigram_dispositions = {
-    "111": "heaven", "000": "earth", "100": "thunder", "011": "wind",
-    "010": "water",  "101": "fire",  "001": "mountain", "110": "lake"
-}
-
-def apply_consequences(choice, primary_hexagram, transformed_hexagram):
+def apply_consequences(choice, primary_hexagram, lines):
     """
     Applies the consequences of the player's choice, factoring in the
-    wisdom of the I Ching.
+    wisdom of the I Ching's changing lines.
     """
     effects = choice["effects"].copy()
     choice_disposition = choice["disposition"]
-    bonus = 10  # Bonus points for aligning with the hexagram's message
+    bonus = 15  # A significant bonus for aligning with the changing line's message
+    message = ""
 
-    # Determine the trigrams of the primary hexagram
-    lower_trigram_bin = "".join(map(str, primary_hexagram["lines_binary"][:3]))
-    upper_trigram_bin = "".join(map(str, primary_hexagram["lines_binary"][3:]))
-
-    primary_dispositions = {
-        trigram_dispositions.get(lower_trigram_bin),
-        trigram_dispositions.get(upper_trigram_bin)
-    }
-
-    # Also consider the transformed hexagram if it exists
-    if transformed_hexagram:
-        lower_transformed_bin = "".join(map(str, transformed_hexagram["lines_binary"][:3]))
-        upper_transformed_bin = "".join(map(str, transformed_hexagram["lines_binary"][3:]))
-        primary_dispositions.add(trigram_dispositions.get(lower_transformed_bin))
-        primary_dispositions.add(trigram_dispositions.get(upper_transformed_bin))
+    changing_lines_indices = [i for i, line_value in enumerate(lines) if line_value in [6, 9]]
 
     print("\n--- The Consequences Unfold ---")
 
-    # Check if the choice aligns with the hexagram's disposition
-    if choice_disposition in primary_dispositions:
-        print("Your choice aligns with the wisdom of the hexagram! The outcome is enhanced.")
-        for key in effects:
-            if effects[key] > 0:
-                effects[key] += bonus
-            elif effects[key] < 0:
-                effects[key] = max(effects[key] + bonus, 0) # Bonus mitigates negative effects
+    # If there are changing lines, they provide the specific guidance.
+    if changing_lines_indices:
+        guiding_themes = [primary_hexagram["lines_theme_en"][i] for i in changing_lines_indices]
+
+        if choice_disposition in guiding_themes:
+            # Find the specific line for the message
+            matched_line_index = -1
+            for i in changing_lines_indices:
+                if primary_hexagram["lines_theme_en"][i] == choice_disposition:
+                    matched_line_index = i
+                    break
+
+            message = (f"Your action resonates with the wisdom of the changing line #{matched_line_index + 1} "
+                       f"({primary_hexagram['lines_en'][matched_line_index]}).\n"
+                       f"The path is clear, and the outcome is greatly enhanced!")
+
+            # Apply a significant bonus
+            for key in effects:
+                if effects[key] >= 0:
+                    effects[key] += bonus
+                else:
+                    effects[key] = max(effects[key] + bonus, 0) # Mitigate negative effects
+        else:
+            message = ("The counsel of the changing lines points in a different direction. "
+                       "Your choice, while valid, does not align with the flow of change.")
+
+    # If no changing lines, the situation is stable. The effects are as expected.
     else:
-        print("You have chosen a path that diverges from the hexagram's counsel. The outcome is as expected.")
+        message = "The situation is stable, with no changing lines. The outcome of your choice is direct and clear."
 
+    print(message)
+
+    # Apply the final effects to the village state
     for key, value in effects.items():
-        change = value - choice["effects"][key] # Calculate the bonus effect
-        total_change = value
-
         original_value = village_state[key]
-        village_state[key] += total_change
+        village_state[key] += value
         village_state[key] = max(0, min(100, village_state[key])) # Clamp
         actual_change = village_state[key] - original_value
 
@@ -230,7 +231,7 @@ def main():
         player_choice = get_player_choice(current_event)
 
         # 6. The consequences are applied
-        apply_consequences(player_choice, primary_hexagram, transformed_hexagram)
+        apply_consequences(player_choice, primary_hexagram, divination_lines)
 
         # 7. Check for game over conditions (optional, can be added later)
         if village_state["food"] <= 0 or village_state["morale"] <= 0 or village_state["health"] <= 0:

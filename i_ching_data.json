@@ -23,7 +23,8 @@
         "九四：或躍在淵，无咎。",
         "九五：飛龍在天，利見大人。",
         "上九：亢龍有悔。"
-      ]
+      ],
+      "lines_theme_en": ["patience", "action", "caution", "flexibility", "leadership", "overreach"]
     },
     {
       "number": 2,
@@ -48,7 +49,8 @@
         "六四：括囊，无咎，无譽。",
         "六五：黃裳，元吉。",
         "上六：龍戰于野，其血玄黃。"
-      ]
+      ],
+      "lines_theme_en": ["caution", "receptive", "patience", "restraint", "modesty", "conflict"]
     },
     {
       "number": 3,
@@ -73,7 +75,8 @@
         "六四：乘馬班如，求婚媾，往吉，无不利。",
         "九五：屯其膏，小貞吉，大貞凶。",
         "上六：乘馬班如，泣血漣如。"
-      ]
+      ],
+      "lines_theme_en": ["patience", "patience", "caution", "cooperation", "caution", "misfortune"]
     },
     {
       "number": 4,
@@ -98,7 +101,8 @@
         "六四：困蒙，吝。",
         "六五：童蒙，吉。",
         "上九：擊蒙，不利為寇，利禦寇。"
-      ]
+      ],
+      "lines_theme_en": ["discipline", "generosity", "caution", "misfortune", "innocence", "discipline"]
     },
     {
       "number": 5,
@@ -123,7 +127,8 @@
         "六四：需于血，出自穴。",
         "九五：需于酒食，貞吉。",
         "上六：入于穴，有不速之客三人來，敬之終吉。"
-      ]
+      ],
+      "lines_theme_en": ["patience", "patience", "danger", "action", "patience", "generosity"]
     },
     {
       "number": 6,
@@ -148,7 +153,8 @@
         "九四：不克訟，復即命，渝安貞，吉。",
         "九五：訟，元吉。",
         "上九：或錫之鞶帶，終朝三褫之。"
-      ]
+      ],
+      "lines_theme_en": ["restraint", "retreat", "patience", "flexibility", "action", "loss"]
     },
     {
       "number": 7,
@@ -160,7 +166,7 @@
       "judgment_zh": "師：貞，丈人，吉，无咎。",
       "lines_en": [
         "Six at the beginning means: An army must set forth in proper order. If the order is not good, misfortune threatens.",
-        "Nine in the second place means: In the midst of the army. Good fortune. No blame. The king has bestowed a triple decoration.",
+        "Six in the second place means: In the midst of the army. Good fortune. No blame. The king has bestowed a triple decoration.",
         "Six in the third place means: Perchance the army carries corpses in the wagon. Misfortune.",
         "Six in the fourth place means: The army retreats. No blame.",
         "Six in the fifth place means: There is game in the field. It is favorable to catch it. Without blame. Let the eldest lead the army. The younger transports corpses; then perseverance brings misfortune.",
@@ -173,7 +179,8 @@
         "六四：師左次，无咎。",
         "六五：田有禽，利執言，无咎。長子帥師，弟子輿尸，貞凶。",
         "上六：大君有命，開國承家，小人勿用。"
-      ]
+      ],
+      "lines_theme_en": ["discipline", "leadership", "misfortune", "retreat", "caution", "leadership"]
     },
     {
       "number": 8,
@@ -198,7 +205,8 @@
         "六四：外比之，貞吉。",
         "九五：顯比，王用三驅，失前禽。邑人不誡，吉。",
         "上六：比之无首，凶。"
-      ]
+      ],
+      "lines_theme_en": ["cooperation", "cooperation", "caution", "cooperation", "generosity", "misfortune"]
     },
     {
       "number": 9,
@@ -223,7 +231,8 @@
         "六四：有孚，血去惕出，无咎。",
         "九五：有孚攣如，富以其鄰。",
         "上九：既雨既處，尚德載，婦貞厲。月幾望，君子征凶。"
-      ]
+      ],
+      "lines_theme_en": ["restraint", "restraint", "conflict", "sincerity", "cooperation", "caution"]
     },
     {
       "number": 10,
@@ -248,7 +257,8 @@
         "九四：履虎尾，愬愬終吉。",
         "九五：夬履，貞厲。",
         "上九：視履考祥，其旋元吉。"
-      ]
+      ],
+      "lines_theme_en": ["simplicity", "patience", "danger", "caution", "action", "reflection"]
     },
     {
       "number": 11,
@@ -273,7 +283,8 @@
         "六四：翩翩不富，以其鄰，不戒以孚。",
         "六五：帝乙歸妹，以祉元吉。",
         "上六：城復于隍，勿用師。自邑告命，貞吝。"
-      ]
+      ],
+      "lines_theme_en": ["cooperation", "generosity", "patience", "modesty", "blessing", "caution"]
     },
     {
       "number": 12,
@@ -298,7 +309,8 @@
         "九四：有命无咎，疇離祉。",
         "九五：休否，大人吉。其亡其亡，繫于苞桑。",
         "上九：傾否，先否後喜。"
-      ]
+      ],
+      "lines_theme_en": ["cooperation", "patience", "shame", "leadership", "caution", "opportunity"]
     },
     {
       "number": 13,
@@ -323,7 +335,8 @@
         "九四：乘其墉，弗克攻，吉。",
         "九五：同人，先號啕而後笑。大師克相遇。",
         "上九：同人于郊，无悔。"
-      ]
+      ],
+      "lines_theme_en": ["openness", "caution", "patience", "restraint", "struggle", "peace"]
     },
     {
       "number": 14,
@@ -348,7 +361,8 @@
         "九四：匪其彭，无咎。",
         "六五：厥孚交如，威如，吉。",
         "上九：自天祐之，吉无不利。"
-      ]
+      ],
+      "lines_theme_en": ["caution", "action", "generosity", "restraint", "sincerity", "blessing"]
     },
     {
       "number": 15,
@@ -373,7 +387,8 @@
         "六四：无不利，撝謙。",
         "六五：不富以其鄰，利用侵伐，无不利。",
         "上六：鳴謙，利用行師，征邑國。"
-      ]
+      ],
+      "lines_theme_en": ["modesty", "modesty", "modesty", "modesty", "action", "discipline"]
     },
     {
       "number": 16,
@@ -394,11 +409,12 @@
       "lines_zh": [
         "初六：鳴豫，凶。",
         "六二：介于石，不終日，貞吉。",
-        "六三：盱豫，悔。遲有悔。",
         "九四：由豫，大有得。勿疑。朋盍簪。",
+        "六三：盱豫，悔。遲有悔。",
         "六五：貞疾，恆不死。",
         "上六：冥豫，成有渝，无咎。"
-      ]
+      ],
+      "lines_theme_en": ["caution", "patience", "caution", "cooperation", "patience", "reflection"]
     },
     {
       "number": 17,
@@ -423,7 +439,8 @@
         "九四：隨有獲，貞凶。有孚在道，以明，何咎。",
         "九五：孚于嘉，吉。",
         "上六：拘係之，乃從維之。王用亨于西山。"
-      ]
+      ],
+      "lines_theme_en": ["flexibility", "caution", "flexibility", "sincerity", "sincerity", "cooperation"]
     },
     {
       "number": 18,
@@ -448,7 +465,8 @@
         "六四：裕父之蠱，往見吝。",
         "六五：幹父之蠱，用譽。",
         "上九：不事王侯，高尚其事。"
-      ]
+      ],
+      "lines_theme_en": ["action", "caution", "action", "patience", "action", "reflection"]
     },
     {
       "number": 19,
@@ -473,7 +491,8 @@
         "六四：至臨，无咎。",
         "六五：知臨，大君之宜，吉。",
         "上六：敦臨，吉，无咎。"
-      ]
+      ],
+      "lines_theme_en": ["cooperation", "cooperation", "caution", "action", "leadership", "generosity"]
     },
     {
       "number": 20,
@@ -498,7 +517,8 @@
         "六四：觀國之光，利用賓于王。",
         "九五：觀我生，君子无咎。",
         "上九：觀其生，君子无咎。"
-      ]
+      ],
+      "lines_theme_en": ["reflection", "reflection", "reflection", "cooperation", "reflection", "reflection"]
     },
     {
       "number": 21,
@@ -523,7 +543,8 @@
         "九四：噬乾胏，得金矢，利艱貞，吉。",
         "六五：噬乾肉，得黃金，貞厲，无咎。",
         "上九：何校滅耳，凶。"
-      ]
+      ],
+      "lines_theme_en": ["restraint", "action", "caution", "action", "caution", "misfortune"]
     },
     {
       "number": 22,
@@ -548,7 +569,8 @@
         "六四：賁如皤如，白馬翰如，匪寇婚媾。",
         "六五：賁于丘園，束帛戔戔，吝，終吉。",
         "上九：白賁，无咎。"
-      ]
+      ],
+      "lines_theme_en": ["simplicity", "dependence", "patience", "sincerity", "modesty", "simplicity"]
     },
     {
       "number": 23,
@@ -573,7 +595,8 @@
         "六四：剝牀以膚，凶。",
         "六五：貫魚，以宮人寵，无不利。",
         "上九：碩果不食，君子得輿，小人剝廬。"
-      ]
+      ],
+      "lines_theme_en": ["danger", "danger", "separation", "danger", "cooperation", "opportunity"]
     },
     {
       "number": 24,
@@ -598,7 +621,8 @@
         "六四：中行獨復。",
         "六五：敦復，无悔。",
         "上六：迷復，凶，有災眚。用行師，終有大敗，以其國君凶，至于十年不克征。"
-      ]
+      ],
+      "lines_theme_en": ["action", "patience", "caution", "reflection", "generosity", "misfortune"]
     },
     {
       "number": 25,
@@ -623,7 +647,8 @@
         "九四：可貞，无咎。",
         "九五：无妄之疾，勿藥有喜。",
         "上九：无妄，行有眚，无攸利。"
-      ]
+      ],
+      "lines_theme_en": ["innocence", "action", "misfortune", "patience", "patience", "caution"]
     },
     {
       "number": 26,
@@ -648,7 +673,8 @@
         "六四：童牛之牿，元吉。",
         "六五：豶豕之牙，吉。",
         "上九：何天之衢，亨。"
-      ]
+      ],
+      "lines_theme_en": ["caution", "patience", "action", "restraint", "restraint", "success"]
     },
     {
       "number": 27,
@@ -673,7 +699,8 @@
         "六四：顛頤，吉。虎視眈眈，其欲逐逐，无咎。",
         "六五：拂經，居貞吉，不可涉大川。",
         "上九：由頤，厲吉，利涉大川。"
-      ]
+      ],
+      "lines_theme_en": ["misfortune", "misfortune", "patience", "action", "patience", "action"]
     },
     {
       "number": 28,
@@ -698,7 +725,8 @@
         "九四：棟隆，吉。有它，吝。",
         "九五：枯楊生華，老婦得其士夫，无咎无譽。",
         "上六：過涉滅頂，凶，无咎。"
-      ]
+      ],
+      "lines_theme_en": ["caution", "opportunity", "danger", "cooperation", "opportunity", "danger"]
     },
     {
       "number": 29,
@@ -723,7 +751,8 @@
         "六四：樽酒簋貳，用缶，納約自牖，終无咎。",
         "九五：坎不盈，祇既平，无咎。",
         "上六：係用徽纆，置于叢棘，三歲不得，凶。"
-      ]
+      ],
+      "lines_theme_en": ["danger", "caution", "patience", "simplicity", "restraint", "misfortune"]
     },
     {
       "number": 30,
@@ -748,7 +777,8 @@
         "九四：突如其來如，焚如，死如，棄如。",
         "六五：出涕沱若，戚嗟若，吉。",
         "上九：王用出征，有嘉折首，獲匪其醜，无咎。"
-      ]
+      ],
+      "lines_theme_en": ["caution", "success", "misfortune", "chaos", "reflection", "action"]
     },
     {
       "number": 31,
@@ -773,7 +803,8 @@
         "九四：貞吉悔亡，憧憧往來，朋從爾思。",
         "九五：咸其脢，无悔。",
         "上六：咸其輔，頰，舌。"
-      ]
+      ],
+      "lines_theme_en": ["restraint", "patience", "caution", "reflection", "restraint", "superficiality"]
     },
     {
       "number": 32,
@@ -789,7 +820,7 @@
         "Nine in the third place means: He who does not give duration to his character meets with disgrace. Persistent humiliation.",
         "Nine in the fourth place means: No game in the field.",
         "Six in the fifth place means: Giving duration to one's character through perseverance. This is good fortune for a woman, misfortune for a man.",
-        "Six at the top means: Restlessness as an enduring condition brings misfortune."
+        "Nine at the top means: Restlessness as an enduring condition brings misfortune."
       ],
       "lines_zh": [
         "初六：浚恆，貞凶，无攸利。",
@@ -798,7 +829,8 @@
         "九四：田无禽。",
         "六五：恆其德，貞，婦人吉，夫子凶。",
         "上六：振恆，凶。"
-      ]
+      ],
+      "lines_theme_en": ["patience", "success", "shame", "misfortune", "patience", "misfortune"]
     },
     {
       "number": 33,
@@ -823,7 +855,8 @@
         "九四：好遯，君子吉，小人否。",
         "九五：嘉遯，貞吉。",
         "上九：肥遯，无不利。"
-      ]
+      ],
+      "lines_theme_en": ["danger", "patience", "caution", "retreat", "retreat", "retreat"]
     },
     {
       "number": 34,
@@ -848,7 +881,8 @@
         "九四：貞吉悔亡，藩決不羸，壯于大輿之輹。",
         "六五：喪羊于易，无悔。",
         "上六：羝羊觸藩，不能退，不能遂，无攸利，艱則吉。"
-      ]
+      ],
+      "lines_theme_en": ["caution", "patience", "restraint", "action", "flexibility", "caution"]
     },
     {
       "number": 35,
@@ -873,7 +907,8 @@
         "九四：晉如鼫鼠，貞厲。",
         "六五：悔亡，失得勿恤，往吉，无不利。",
         "上九：晉其角，維用伐邑，厲吉，无咎，貞吝。"
-      ]
+      ],
+      "lines_theme_en": ["patience", "patience", "cooperation", "caution", "action", "discipline"]
     },
     {
       "number": 36,
@@ -898,7 +933,8 @@
         "六四：入于左腹，獲明夷之心，于出門庭。",
         "六五：箕子之明夷，利貞。",
         "上六：不明晦，初登于天，後入于地。"
-      ]
+      ],
+      "lines_theme_en": ["retreat", "action", "caution", "retreat", "patience", "misfortune"]
     },
     {
       "number": 37,
@@ -923,7 +959,8 @@
         "六四：富家，大吉。",
         "九五：王假有家，勿恤，吉。",
         "上九：有孚威如，終吉。"
-      ]
+      ],
+      "lines_theme_en": ["restraint", "duty", "restraint", "success", "leadership", "sincerity"]
     },
     {
       "number": 38,
@@ -948,7 +985,8 @@
         "九四：睽孤，遇元夫，交孚，厲无咎。",
         "六五：悔亡，厥宗噬膚，往何咎。",
         "上九：睽孤，見豕負塗，載鬼一車，先張之弧，後說之弧。匪寇婚媾，往遇雨則吉。"
-      ]
+      ],
+      "lines_theme_en": ["patience", "opportunity", "misfortune", "cooperation", "cooperation", "resolution"]
     },
     {
       "number": 39,
@@ -973,7 +1011,8 @@
         "六四：往蹇，來連。",
         "九五：大蹇，朋來。",
         "上六：往蹇，來碩，吉。利見大人。"
-      ]
+      ],
+      "lines_theme_en": ["retreat", "patience", "retreat", "cooperation", "cooperation", "cooperation"]
     },
     {
       "number": 40,
@@ -998,7 +1037,8 @@
         "九四：解而拇，朋至斯孚。",
         "六五：君子維有解，吉。有孚于小人。",
         "上六：公用射隼于高墉之上，獲之，无不利。"
-      ]
+      ],
+      "lines_theme_en": ["success", "action", "caution", "separation", "leadership", "action"]
     },
     {
       "number": 41,
@@ -1023,7 +1063,8 @@
         "六四：損其疾，使遄有喜，无咎。",
         "六五：或益之，十朋之龜弗克違，元吉。",
         "上九：弗損益之，无咎，貞吉，利有攸往，得臣无家。"
-      ]
+      ],
+      "lines_theme_en": ["generosity", "patience", "separation", "reflection", "success", "generosity"]
     },
     {
       "number": 42,
@@ -1048,7 +1089,8 @@
         "六四：中行，告公從。利用為依遷國。",
         "九五：有孚惠心，勿問元吉。有孚惠我德。",
         "上九：莫益之，或擊之，立心勿恆，凶。"
-      ]
+      ],
+      "lines_theme_en": ["action", "patience", "sincerity", "cooperation", "sincerity", "caution"]
     },
     {
       "number": 43,
@@ -1073,7 +1115,8 @@
         "九四：臀无膚，其行次且。牽羊悔亡，聞言不信。",
         "九五：莧陸夬夬，中行无咎。",
         "上六：无號，終有凶。"
-      ]
+      ],
+      "lines_theme_en": ["caution", "caution", "action", "patience", "action", "misfortune"]
     },
     {
       "number": 44,
@@ -1098,7 +1141,8 @@
         "九四：包无魚，起凶。",
         "九五：以杞包瓜，含章，有隕自天。",
         "上九：姤其角，吝，无咎。"
-      ]
+      ],
+      "lines_theme_en": ["restraint", "restraint", "caution", "misfortune", "opportunity", "caution"]
     },
     {
       "number": 45,
@@ -1123,7 +1167,8 @@
         "九四：大吉，无咎。",
         "九五：萃有位，无咎。匪孚，元永貞，悔亡。",
         "上六：齎咨涕洟，无咎。"
-      ]
+      ],
+      "lines_theme_en": ["sincerity", "sincerity", "caution", "success", "patience", "reflection"]
     },
     {
       "number": 46,
@@ -1139,7 +1184,7 @@
         "Nine in the third place means: One pushes upward into an empty city.",
         "Six in the fourth place means: The king offers sacrifice on Mount Ch'i. Good fortune. No blame.",
         "Six in the fifth place means: Perseverance brings good fortune. One pushes upward by steps.",
-        "Six at the top means: Pushing upward in darkness. It is favorable to be unremittingly persevering."
+        "Nine at the top means: Pushing upward in darkness. It is favorable to be unremittingly persevering."
       ],
       "lines_zh": [
         "初六：允升，大吉。",
@@ -1148,7 +1193,8 @@
         "六四：王用亨于岐山，吉，无咎。",
         "六五：貞吉，升階。",
         "上六：冥升，利于不息之貞。"
-      ]
+      ],
+      "lines_theme_en": ["action", "sincerity", "action", "action", "patience", "patience"]
     },
     {
       "number": 47,
@@ -1173,7 +1219,8 @@
         "九四：來徐徐，困于金車，吝，有終。",
         "九五：劓刖，困于赤紱，乃徐有說，利用祭祀。",
         "上六：困于葛藟，于藟曰動悔。有悔，征吉。"
-      ]
+      ],
+      "lines_theme_en": ["patience", "patience", "misfortune", "patience", "action", "action"]
     },
     {
       "number": 48,
@@ -1198,7 +1245,8 @@
         "六四：井甃，无咎。",
         "九五：井冽，寒泉食。",
         "上六：井收勿幕，有孚元吉。"
-      ]
+      ],
+      "lines_theme_en": ["inaction", "misfortune", "opportunity", "action", "success", "success"]
     },
     {
       "number": 49,
@@ -1223,7 +1271,8 @@
         "九四：悔亡，有孚改命，吉。",
         "九五：大人虎變，未占有孚。",
         "上六：君子豹變，小人革面，征凶，居貞吉。"
-      ]
+      ],
+      "lines_theme_en": ["restraint", "action", "caution", "action", "action", "caution"]
     },
     {
       "number": 50,
@@ -1248,7 +1297,8 @@
         "九四：鼎折足，覆公餗，其形渥，凶。",
         "六五：鼎黃耳金鉉，利貞。",
         "上九：鼎玉鉉，大吉，无不利。"
-      ]
+      ],
+      "lines_theme_en": ["action", "patience", "patience", "misfortune", "patience", "success"]
     },
     {
       "number": 51,
@@ -1273,7 +1323,8 @@
         "九四：震遂泥。",
         "六五：震往來厲，億无喪，有事。",
         "上六：震索索，視矍矍，征凶。震不于其躬，于其鄰，无咎。婚媾有言。"
-      ]
+      ],
+      "lines_theme_en": ["success", "patience", "action", "misfortune", "caution", "caution"]
     },
     {
       "number": 52,
@@ -1298,7 +1349,8 @@
         "六四：艮其身，无咎。",
         "六五：艮其輔，言有序，悔亡。",
         "上九：敦艮，吉。"
-      ]
+      ],
+      "lines_theme_en": ["patience", "inaction", "danger", "patience", "restraint", "patience"]
     },
     {
       "number": 53,
@@ -1323,7 +1375,8 @@
         "六四：鴻漸于木，或得其桷，无咎。",
         "九五：鴻漸于陵，婦三歲不孕，終莫之勝，吉。",
         "上九：鴻漸于陸，其羽可用為儀，吉。"
-      ]
+      ],
+      "lines_theme_en": ["caution", "success", "misfortune", "opportunity", "patience", "success"]
     },
     {
       "number": 54,
@@ -1348,7 +1401,8 @@
         "九四：歸妹愆期，遲歸有時。",
         "六五：帝乙歸妹，其君之袂，不如其娣之袂良。月幾望，吉。",
         "上六：女承筐无實，士刲羊无血，无攸利。"
-      ]
+      ],
+      "lines_theme_en": ["action", "patience", "caution", "patience", "modesty", "inaction"]
     },
     {
       "number": 55,
@@ -1373,7 +1427,8 @@
         "九四：豐其蔀，日中見斗，遇其夷主，吉。",
         "六五：來章，有慶譽，吉。",
         "上六：豐其屋，蔀其家，窺其戶，闃其无人，三歲不覿，凶。"
-      ]
+      ],
+      "lines_theme_en": ["cooperation", "sincerity", "caution", "cooperation", "cooperation", "isolation"]
     },
     {
       "number": 56,
@@ -1398,7 +1453,8 @@
         "九四：旅于處，得其資斧，我心不快。",
         "六五：射雉，一矢亡，終以譽命。",
         "上九：鳥焚其巢，旅人先笑後號啕。喪牛于易，凶。"
-      ]
+      ],
+      "lines_theme_en": ["caution", "patience", "danger", "caution", "action", "misfortune"]
     },
     {
       "number": 57,
@@ -1423,7 +1479,8 @@
         "六四：悔亡，田獲三品。",
         "九五：貞吉悔亡，无不利。无初有終，先庚三日，後庚三日，吉。",
         "上九：巽在牀下，喪其資斧，貞凶。"
-      ]
+      ],
+      "lines_theme_en": ["flexibility", "reflection", "caution", "action", "action", "misfortune"]
     },
     {
       "number": 58,
@@ -1446,9 +1503,10 @@
         "九二：孚兌，吉，悔亡。",
         "六三：來兌，凶。",
         "九四：商兌未寧，介疾有喜。",
-        "九五：孚于剝，有厲。",
+        "六五：孚于剝，有厲。",
         "上六：引兌。"
-      ]
+      ],
+      "lines_theme_en": ["success", "sincerity", "misfortune", "reflection", "danger", "caution"]
     },
     {
       "number": 59,
@@ -1473,7 +1531,8 @@
         "六四：渙其群，元吉。渙有丘，匪夷所思。",
         "九五：渙汗其大號，渙王居，无咎。",
         "上九：渙其血，去逖出，无咎。"
-      ]
+      ],
+      "lines_theme_en": ["action", "action", "reflection", "cooperation", "leadership", "separation"]
     },
     {
       "number": 60,
@@ -1498,7 +1557,8 @@
         "六四：安節，亨。",
         "九五：甘節，吉。往有尚。",
         "上六：苦節，貞凶，悔亡。"
-      ]
+      ],
+      "lines_theme_en": ["restraint", "restraint", "caution", "restraint", "action", "caution"]
     },
     {
       "number": 61,
@@ -1523,7 +1583,8 @@
         "六四：月幾望，馬匹亡，无咎。",
         "九五：有孚攣如，无咎。",
         "上九：翰音登于天，貞凶。"
-      ]
+      ],
+      "lines_theme_en": ["caution", "cooperation", "flexibility", "patience", "sincerity", "overreach"]
     },
     {
       "number": 62,
@@ -1548,7 +1609,8 @@
         "九四：无咎，弗過遇之。往厲必戒，勿用永貞。",
         "六五：密雲不雨，自我西郊，公弋取彼在穴。",
         "上六：弗遇過之，飛鳥離之，凶，是謂災眚。"
-      ]
+      ],
+      "lines_theme_en": ["misfortune", "modesty", "caution", "patience", "opportunity", "misfortune"]
     },
     {
       "number": 63,
@@ -1573,7 +1635,8 @@
         "六四：繻有衣袽，終日戒。",
         "九五：東鄰殺牛，不如西鄰之禴祭，實受其福。",
         "上六：濡其首，厲。"
-      ]
+      ],
+      "lines_theme_en": ["caution", "patience", "action", "caution", "modesty", "danger"]
     },
     {
       "number": 64,
@@ -1598,7 +1661,8 @@
         "九四：貞吉，悔亡，震用伐鬼方，三年有賞于大國。",
         "六五：貞吉，无悔，君子之光，有孚，吉。",
         "上九：有孚于飲酒，无咎，濡其首，有孚失是。"
-      ]
+      ],
+      "lines_theme_en": ["caution", "patience", "action", "patience", "patience", "caution"]
     }
   ]
 }
