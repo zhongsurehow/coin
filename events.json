@@ -1,0 +1,60 @@
+{
+  "events": [
+    {
+      "id": "drought",
+      "description_en": "A severe drought has struck the valley. The river is low, and the fields are cracked and dry. The elders are worried about the harvest.",
+      "description_zh": "一场严重的干旱袭击了山谷。河水低落，田地龟裂。长老们对收成忧心忡忡。",
+      "choices": [
+        {
+          "id": "pray",
+          "text_en": "Lead the village in a solemn ritual to pray for rain.",
+          "text_zh": "带领村民举行庄严的仪式，祈求降雨。",
+          "disposition": "heaven",
+          "effects": { "food": 0, "morale": 15, "health": 5 }
+        },
+        {
+          "id": "conserve",
+          "text_en": "Implement strict water rationing and organize teams to dig deeper wells.",
+          "text_zh": "实行严格的用水配给，并组织队伍挖掘更深的井。",
+          "disposition": "earth",
+          "effects": { "food": 5, "morale": -10, "health": -5 }
+        },
+        {
+          "id": "seek_help",
+          "text_en": "Send a small party to the neighboring mountain villages to ask for aid.",
+          "text_zh": "派遣一支小队前往邻近的山村请求援助。",
+          "disposition": "lake",
+          "effects": { "food": 20, "morale": -5, "health": -10 }
+        }
+      ]
+    },
+    {
+      "id": "dispute",
+      "description_en": "A bitter dispute has broken out between two families over the ownership of a rice paddy. Tempers are flaring, and it threatens to divide the village.",
+      "description_zh": "两个家庭为一块稻田的所有权爆发了激烈的争执。气氛紧张，这可能会分裂整个村庄。",
+      "choices": [
+        {
+          "id": "mediate",
+          "text_en": "Act as a neutral mediator and help the families find a compromise.",
+          "text_zh": "作为中立的调解人，帮助两个家庭找到折衷方案。",
+          "disposition": "wind",
+          "effects": { "food": 0, "morale": 10, "health": 0 }
+        },
+        {
+          "id": "enforce_law",
+          "text_en": "Consult the ancient village laws and enforce the traditional ownership rules.",
+          "text_zh": "查阅古老的村庄律法，并强制执行传统的所有权规则。",
+          "disposition": "thunder",
+          "effects": { "food": 0, "morale": -10, "health": 0 }
+        },
+        {
+          "id": "do_nothing",
+          "text_en": "Advise them that this is a private matter and they must resolve it themselves.",
+          "text_zh": "建议他们这是私事，必须由他们自己解决。",
+          "disposition": "mountain",
+          "effects": { "food": 0, "morale": -15, "health": 0 }
+        }
+      ]
+    }
+  ]
+}
